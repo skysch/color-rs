@@ -57,7 +57,7 @@ fn color_conversions_black() {
 	assert!(close(black_hsv.hue(), 0.0, UNIT));
 	assert!(close(black_hsv.saturation(), 0.0, UNIT));
 	assert!(close(black_hsv.value(), 0.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color white.
 #[test]
@@ -85,7 +85,7 @@ fn color_conversions_white() {
 	assert!(close(white_hsv.hue(), 0.0, UNIT));
 	assert!(close(white_hsv.saturation(), 0.0, UNIT));
 	assert!(close(white_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color red.
 #[test]
@@ -113,7 +113,7 @@ fn color_conversions_red() {
 	assert!(close(red_hsv.hue(), 0.0, UNIT));
 	assert!(close(red_hsv.saturation(), 1.0, UNIT));
 	assert!(close(red_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color lime.
 #[test]
@@ -141,7 +141,7 @@ fn color_conversions_lime() {
 	assert!(close(lime_hsv.hue(), 120.0, UNIT));
 	assert!(close(lime_hsv.saturation(), 1.0, UNIT));
 	assert!(close(lime_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color blue.
 #[test]
@@ -169,7 +169,7 @@ fn color_conversions_blue() {
 	assert!(close(blue_hsv.hue(), 240.0, UNIT));
 	assert!(close(blue_hsv.saturation(), 1.0, UNIT));
 	assert!(close(blue_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color yellow.
 #[test]
@@ -197,7 +197,7 @@ fn color_conversions_yellow() {
 	assert!(close(yellow_hsv.hue(), 60.0, UNIT));
 	assert!(close(yellow_hsv.saturation(), 1.0, UNIT));
 	assert!(close(yellow_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color cyan.
 #[test]
@@ -225,7 +225,7 @@ fn color_conversions_cyan() {
 	assert!(close(cyan_hsv.hue(), 180.0, UNIT));
 	assert!(close(cyan_hsv.saturation(), 1.0, UNIT));
 	assert!(close(cyan_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color magenta.
 #[test]
@@ -253,7 +253,7 @@ fn color_conversions_magenta() {
 	assert!(close(magenta_hsv.hue(), 300.0, UNIT));
 	assert!(close(magenta_hsv.saturation(), 1.0, UNIT));
 	assert!(close(magenta_hsv.value(), 1.0, UNIT));
-	}
+}
 
 /// Tests color conversions for the color silver.
 #[test]
@@ -281,7 +281,7 @@ fn color_conversions_silver() {
 	assert!(close(silver_hsv.hue(), 0.0, UNIT));
 	assert!(close(silver_hsv.saturation(), 0.0, UNIT));
 	assert!(close(silver_hsv.value(), 0.75, UNIT));
-	}
+}
 
 /// Tests color conversions for the color gray.
 #[test]
@@ -309,7 +309,7 @@ fn color_conversions_gray() {
 	assert!(close(gray_hsv.hue(), 0.0, UNIT));
 	assert!(close(gray_hsv.saturation(), 0.0, UNIT));
 	assert!(close(gray_hsv.value(), 0.50, UNIT));
-	}
+}
 
 /// Tests color conversions for the color maroon.
 #[test]
@@ -337,7 +337,7 @@ fn color_conversions_maroon() {
 	assert!(close(maroon_hsv.hue(), 0.0, UNIT));
 	assert!(close(maroon_hsv.saturation(), 1.0, UNIT));
 	assert!(close(maroon_hsv.value(), 0.5, UNIT));
-	}
+}
 
 /// Tests color conversions for the color olive.
 #[test]
@@ -365,7 +365,7 @@ fn color_conversions_olive() {
 	assert!(close(olive_hsv.hue(), 60.0, UNIT));
 	assert!(close(olive_hsv.saturation(), 1.0, UNIT));
 	assert!(close(olive_hsv.value(), 0.5, UNIT));
-	}
+}
 
 /// Tests color conversions for the color green.
 #[test]
@@ -393,7 +393,7 @@ fn color_conversions_green() {
 	assert!(close(green_hsv.hue(), 120.0, UNIT));
 	assert!(close(green_hsv.saturation(), 1.0, UNIT));
 	assert!(close(green_hsv.value(), 0.5, UNIT));
-	}
+}
 
 /// Tests color conversions for the color purple.
 #[test]
@@ -421,7 +421,7 @@ fn color_conversions_purple() {
 	assert!(close(purple_hsv.hue(), 300.0, UNIT));
 	assert!(close(purple_hsv.saturation(), 1.0, UNIT));
 	assert!(close(purple_hsv.value(), 0.5, UNIT));
-	}
+}
 
 /// Tests color conversions for the color teal.
 #[test]
@@ -449,7 +449,7 @@ fn color_conversions_teal() {
 	assert!(close(teal_hsv.hue(), 180.0, UNIT));
 	assert!(close(teal_hsv.saturation(), 1.0, UNIT));
 	assert!(close(teal_hsv.value(), 0.5, UNIT));
-	}
+}
 
 /// Tests color conversions for the color navy.
 #[test]
@@ -477,4 +477,4 @@ fn color_conversions_navy() {
 	assert!(close(navy_hsv.hue(), 240.0, UNIT));
 	assert!(close(navy_hsv.saturation(), 1.0, UNIT));
 	assert!(close(navy_hsv.value(), 0.5, UNIT));
-	}
+}
