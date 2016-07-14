@@ -1,5 +1,5 @@
 [package]
-name = "color-rs"
+name = "color"
 version = "1.0.0"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 keywords = ["color"]
