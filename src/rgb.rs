@@ -194,9 +194,6 @@ impl Rgb {
 	pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
 		where C: Into<Self> + Sized
 	{
-		if !amount.is_finite() {
-			panic!("invalid argument at Rgb::lerp(_, _, {:?}", amount);
-		}
 		let s = start.into();
 		let e = end.into();
 		Rgb {

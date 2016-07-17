@@ -30,6 +30,7 @@ use utilities::{lerp_f32, clamped, nearly_equal};
 
 use std::convert::From;
 use std::fmt;
+use std::f32;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -50,15 +51,6 @@ pub struct Hsl {
 impl Hsl {
 	/// Creates a new Hsl color.
 	pub fn new(hue: f32, saturation: f32, lightness: f32) -> Self {
-		if !hue.is_finite() 
-			|| !saturation.is_finite() 
-			|| !lightness.is_finite()
-		{
-			panic!("invalid argument at Hsl::new({:?}, {:?}, {:?})",
-				hue, saturation, lightness
-			);
-		}
-
 		let mut hsl = Hsl {h: 0.0, s: 0.0, l: 0.0};
 		hsl.set_hue(hue);
 		hsl.set_saturation(saturation);
@@ -128,10 +120,7 @@ impl Hsl {
 	/// assert!(nearly_equal(c.hue(), 99.0));
 	/// ```
 	pub fn set_hue(&mut self, hue: f32) {
-		if !hue.is_finite() {
-			panic!("invalid argument at Hsl::set_hue({:?})", hue);
-		}
-		self.h = hue % 360.0;
+		self.h = clamped(hue, f32::MIN, f32::MAX) % 360.0;
 	}
 	
 	/// Sets the saturation.
@@ -148,9 +137,6 @@ impl Hsl {
 	/// assert!(nearly_equal(c.saturation(), 0.99));
 	/// ```
 	pub fn set_saturation(&mut self, saturation: f32) {
-		if !saturation.is_finite() {
-			panic!("invalid argument at Hsl::set_saturation({:?})", saturation);
-		}
 		self.s = clamped(saturation, 0.0, 1.0);
 	}
 
@@ -169,9 +155,6 @@ impl Hsl {
 	/// assert!(nearly_equal(c.lightness(), 0.99));
 	/// ```
 	pub fn set_lightness(&mut self, lightness: f32) {
-		if !lightness.is_finite() {
-			panic!("invalid argument at Hsl::set_lightness({:?})", lightness);
-		}
 		self.l = clamped(lightness, 0.0, 1.0);
 	}
 
@@ -215,9 +198,6 @@ impl Hsl {
 	pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
 		where C: Into<Self> + Sized
 	{
-		if !amount.is_finite() {
-			panic!("invalid argument at Hsl::lerp(_, _, {:?}", amount);
-		}
 		let s = start.into();
 		let e = end.into();
 		Hsl {

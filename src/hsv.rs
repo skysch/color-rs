@@ -30,7 +30,7 @@ use utilities::{lerp_f32, clamped, nearly_equal};
 
 use std::convert::From;
 use std::fmt;
-
+use std::f32;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Hsv
@@ -50,15 +50,6 @@ pub struct Hsv {
 impl Hsv {
 	/// Creates a new Hsv color.
 	pub fn new(hue: f32, saturation: f32, value: f32) -> Self {
-		if !hue.is_finite() 
-			|| !saturation.is_finite() 
-			|| !value.is_finite()
-		{
-			panic!("invalid argument at Hsv::new({:?}, {:?}, {:?})",
-				hue, saturation, value
-			);
-		}
-
 		let mut hsv = Hsv {h: 0.0, s: 0.0, v: 0.0};
 		hsv.set_hue(hue);
 		hsv.set_saturation(saturation);
@@ -128,10 +119,7 @@ impl Hsv {
 	/// assert!(nearly_equal(c.hue(), 99.0));
 	/// ```
 	pub fn set_hue(&mut self, hue: f32) {
-		if !hue.is_finite() {
-			panic!("invalid argument at Hsv::set_hue({:?})", hue);
-		}
-		self.h = hue % 360.0;
+		self.h = clamped(hue, f32::MIN, f32::MAX) % 360.0;
 	}
 	
 	/// Sets the saturation.
@@ -148,9 +136,6 @@ impl Hsv {
 	/// assert!(nearly_equal(c.saturation(), 0.99));
 	/// ```
 	pub fn set_saturation(&mut self, saturation: f32) {
-		if !saturation.is_finite() {
-			panic!("invalid argument at Hsv::set_saturation({:?})", saturation);
-		}
 		self.s = clamped(saturation, 0.0, 1.0);
 	}
 
@@ -169,9 +154,6 @@ impl Hsv {
 	/// assert!(nearly_equal(c.value(), 0.99));
 	/// ```
 	pub fn set_value(&mut self, value: f32) {
-		if !value.is_finite() {
-			panic!("invalid argument at Hsv::set_value({:?})", value);
-		}
 		self.v = clamped(value, 0.0, 1.0);
 	}
 
@@ -215,9 +197,6 @@ impl Hsv {
 	pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
 		where C: Into<Self> + Sized
 	{
-		if !amount.is_finite() {
-			panic!("invalid argument at Hsv::lerp(_, _, {:?}", amount);
-		}
 		let s = start.into();
 		let e = end.into();
 		Hsv {

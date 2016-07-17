@@ -50,15 +50,6 @@ pub struct Xyz {
 impl Xyz {
 	/// Creates a new Xyz color.
 	pub fn new(x: f32, y: f32, z: f32) -> Self {
-		if !x.is_finite() 
-			|| !y.is_finite() 
-			|| !z.is_finite()
-		{
-			panic!("invalid argument at Xyz::new({:?}, {:?}, {:?})",
-				x, y, z
-			);
-		}
-
 		let mut xyz = Xyz {x: 0.0, y: 0.0, z: 0.0};
 		xyz.set_x(x);
 		xyz.set_y(y);
@@ -128,9 +119,6 @@ impl Xyz {
 	/// assert!(nearly_equal(c.x(), 0.99));
 	/// ```
 	pub fn set_x(&mut self, x: f32) {
-		if !x.is_finite() {
-			panic!("invalid argument at Xyz::set_x({:?})", x);
-		}
 		self.x = clamped(x, 0.0, 1.0);
 	}
 	
@@ -148,9 +136,6 @@ impl Xyz {
 	/// assert!(nearly_equal(c.y(), 0.99));
 	/// ```
 	pub fn set_y(&mut self, y: f32) {
-		if !y.is_finite() {
-			panic!("invalid argument at Xyz::set_y({:?})", y);
-		}
 		self.y = clamped(y, 0.0, 1.0);
 	}
 
@@ -169,9 +154,6 @@ impl Xyz {
 	/// assert!(nearly_equal(c.z(), 0.99));
 	/// ```
 	pub fn set_z(&mut self, z: f32) {
-		if !z.is_finite() {
-			panic!("invalid argument at Xyz::set_z({:?})", z);
-		}
 		self.z = clamped(z, 0.0, 1.0);
 	}
 
@@ -215,9 +197,6 @@ impl Xyz {
 	pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
 		where C: Into<Self> + Sized
 	{
-		if !amount.is_finite() {
-			panic!("invalid argument at Xyz::lerp(_, _, {:?}", amount);
-		}
 		let s = start.into();
 		let e = end.into();
 		Xyz {
