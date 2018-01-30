@@ -1,14 +1,15 @@
 [package]
 name = "color"
-version = "0.1.2"
+version = "0.2.0" # Remember to update html_root_url.
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
-keywords = ["color"]
 description = "Color library"
-license-file = "license.md"
-readme = "readme.md"
-repository = "https://github.com/skyschermer/color-rs"
-homepage = ""
+license = "MIT, Apache 2.0"
+readme = "README.md"
+keywords = ["color"]
+categories = []
 documentation = ""
+homepage = ""
+repository = "https://github.com/skysch/color-rs"
 exclude = ["*.sublime-project", "*.sublime-workspace"]
 
 [lib]

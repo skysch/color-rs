@@ -2,13 +2,15 @@
 color-rs
 ========
 
-This is an color library meant to provide flexible and convenient color manipulation functions.
+This is an color library providing flexible and convenient color manipulation functions.
 
 
 Design
 ------
 
-The design goals of this library are as follows:
+Unlike most other color libraries, this is one is not built to encode colors for the purpose of shuffling them off to a GPU or other bulk operations. As such, it is not designed to be efficient for doing bulk operations. Instead, this is more of an artistic library for manipulating relationships between colors.
+
+The primary requirements of this library are as follows:
 
 + Available operations must be independent of the underlying representation.
 + Most features of the library must be exposed through a single `Color` object.
