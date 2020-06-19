@@ -234,5 +234,5 @@ pub fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
 
     let s = if start > end {end} else {start};
     let e = if start > end {start} else {end};
-    (((e-s) as f32) * a) as f32 + s
+    ((e-s) * a) + s
 }

@@ -1,62 +1,54 @@
 [package]
 name = "color"
-version = "0.2.0" # Remember to update html_root_url.
+version = "0.2.1"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
-description = "Color library"
-license = "MIT, Apache 2.0"
-readme = "README.md"
-keywords = ["color"]
-categories = []
-documentation = ""
-homepage = ""
-repository = "https://github.com/skysch/color-rs"
-exclude = ["*.sublime-project", "*.sublime-workspace"]
+edition = "2018"
+license = "MIT or Apache-2.0"
+# maintenance = { status = "experiemental" }
 
 [lib]
 name = "color"
 
+[features]
+default = []
+
+# Required dependencies
+[dependencies]
+
+# Optional dependencies
+serde = { version = "*", features=["derive"], optional = true }
+
+
+# Dependencies used for tests, examples, and benches.
+[dev-dependencies]
+
+
 # The development profile, used for `cargo build`
 [profile.dev]
 opt-level = 0
-debug = true
+debug = false # Disabled to speed up compilation; not being used much.
 rpath = false
 lto = false
 debug-assertions = true
+incremental = true
+overflow-checks = true
+
+# Development profile overrides, ensure dependent crates run fast.
+[profile.dev.package."*"]
+opt-level = 3
+debug-assertions = false
 codegen-units = 1
+
 
 # The release profile, used for `cargo build --release`
 [profile.release]
 opt-level = 3
 debug = true
 rpath = false
-lto = false
+lto = "fat"
 debug-assertions = false
 codegen-units = 1
+incremental = false
+overflow-checks = true
 
-# The testing profile, used for `cargo test`
-[profile.test]
-opt-level = 0
-debug = true
-rpath = false
-lto = false
-debug-assertions = true
-codegen-units = 1
-
-# The benchmarking profile, used for `cargo bench`
-[profile.bench]
-opt-level = 3
-debug = false
-rpath = false
-lto = false
-debug-assertions = false
-codegen-units = 1
-
-# The documentation profile, used for `cargo doc`
-[profile.doc]
-opt-level = 0
-debug = true
-rpath = false
-lto = false
-debug-assertions = true
-codegen-units = 1
 

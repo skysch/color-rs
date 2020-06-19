@@ -11,13 +11,13 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use cmyk::Cmyk;
-use hsl::Hsl;
-use hsv::Hsv;
-use rgb::Rgb;
+use crate::cmyk::Cmyk;
+use crate::hsl::Hsl;
+use crate::hsv::Hsv;
+use crate::rgb::Rgb;
 
-use utilities::clamped;
-use utilities::lerp_f32;
+use crate::utilities::clamped;
+use crate::utilities::lerp_f32;
 
 // Standard library imports.
 use std::convert::From;
@@ -306,9 +306,9 @@ impl Xyz {
         let s = start.into();
         let e = end.into();
         
-        let x = (s.x - e.x) as f32;
-        let y = (s.y - e.y) as f32;
-        let z = (s.z - e.z) as f32;
+        let x = s.x - e.x;
+        let y = s.y - e.y;
+        let z = s.z - e.z;
 
         (x*x + y*y + z*z).sqrt()
     }
@@ -316,14 +316,14 @@ impl Xyz {
 
 
 impl fmt::Display for Xyz {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "{:?}", self)
     }
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////
-// Xyzconversions
+// Xyz conversions
 ////////////////////////////////////////////////////////////////////////////////
 impl From<[f32; 3]> for Xyz {
     fn from(components: [f32; 3]) -> Self {

@@ -11,13 +11,13 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use hsl::Hsl;
-use rgb::Rgb;
+use crate::hsl::Hsl;
+use crate::rgb::Rgb;
 
-use utilities::clamped;
-use utilities::distance;
-use utilities::lerp_u8;
-use utilities::nearly_equal;
+use crate::utilities::clamped;
+use crate::utilities::distance;
+use crate::utilities::lerp_u8;
+use crate::utilities::nearly_equal;
 
 
 // Standard library imports.
@@ -453,21 +453,21 @@ impl Cmyk {
 
 
 impl fmt::Display for Cmyk {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "{:?}", self)
     }
 }
 
 
 impl fmt::UpperHex for Cmyk {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:02X}{:02X}{:02X}{:02X}", self.c, self.m, self.y, self.k)
     }
 }
 
 
 impl fmt::LowerHex for Cmyk {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:02x}{:02x}{:02x}{:02x}", self.c, self.m, self.y, self.k)
     }
 }
@@ -518,7 +518,7 @@ impl From<Rgb> for Cmyk {
         // Find min, max, index of max, and delta.
         let ratios = rgb.ratios();
         let max = ratios
-            .into_iter()
+            .iter()
             .fold(ratios[0], |max, &x| {
                 if x > max {x} else {max}
             });

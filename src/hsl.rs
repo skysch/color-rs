@@ -11,14 +11,14 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use cmyk::Cmyk;
-use hsv::Hsv;
-use rgb::Rgb;
-use xyz::Xyz;
+use crate::cmyk::Cmyk;
+use crate::hsv::Hsv;
+use crate::rgb::Rgb;
+use crate::xyz::Xyz;
 
-use utilities::clamped;
-use utilities::lerp_f32;
-use utilities::nearly_equal;
+use crate::utilities::clamped;
+use crate::utilities::lerp_f32;
+use crate::utilities::nearly_equal;
 
 
 // Standard library imports.
@@ -323,7 +323,7 @@ impl Hsl {
 
 
 impl fmt::Display for Hsl {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "{:?}", self)
     }
 }
@@ -359,7 +359,7 @@ impl From<Rgb> for Hsl {
         // Find min, max, index of max, and delta.
         let ratios = rgb.ratios();
         let (min, max, max_index, _) = ratios
-            .into_iter()
+            .iter()
             .fold((ratios[0], ratios[0], 0, 0), |(min, max, i, c), &x| {
                 match (x < min, x > max) {
                     (true, false) => (x, max, i, c+1),

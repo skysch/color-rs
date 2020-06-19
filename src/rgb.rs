@@ -11,14 +11,14 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use cmyk::Cmyk;
-use hsl::Hsl;
-use hsv::Hsv;
-use xyz::Xyz;
+use crate::cmyk::Cmyk;
+use crate::hsl::Hsl;
+use crate::hsv::Hsv;
+use crate::xyz::Xyz;
 
-use utilities::clamped;
-use utilities::distance;
-use utilities::lerp_u8;
+use crate::utilities::clamped;
+use crate::utilities::distance;
+use crate::utilities::lerp_u8;
 
 // Standard library imports.
 use std::convert::From;
@@ -371,21 +371,21 @@ impl Rgb {
 
 
 impl fmt::Display for Rgb {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "{:?}", self)
     }
 }
 
 
 impl fmt::UpperHex for Rgb {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:02X}{:02X}{:02X}", self.r, self.g, self.b)
     }
 }
 
 
 impl fmt::LowerHex for Rgb {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:02x}{:02x}{:02x}", self.r, self.g, self.b)
     }
 }

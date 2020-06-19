@@ -1,44 +1,69 @@
-// Copyright 2018 Skylor R. Schermer.
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
 ////////////////////////////////////////////////////////////////////////////////
-//!
-//! Provides color manipulation functions and color model encodings.
-//!
+// Color -- a color library for color editors
+////////////////////////////////////////////////////////////////////////////////
+// Copyright 2020 Skylor R. Schermer
+// This code is dual licenced using the MIT or Apache 2 license.
+// See licence-mit.md and licence-apache.md for details.
+////////////////////////////////////////////////////////////////////////////////
+//! Color library modules.
 ////////////////////////////////////////////////////////////////////////////////
 
+// #![doc(html_root_url = "https://docs.rs/color/0.2.1")]
+#![warn(anonymous_parameters)]
+#![warn(bad_style)]
+#![warn(bare_trait_objects)]
+#![warn(const_err)]
+#![warn(dead_code)]
+#![warn(elided_lifetimes_in_paths)]
+#![warn(improper_ctypes)]
+#![warn(missing_copy_implementations)]
+#![warn(missing_debug_implementations)]
+#![warn(missing_docs)]
+#![warn(missing_doc_code_examples)]
+#![warn(no_mangle_generic_items)]
+#![warn(non_shorthand_field_patterns)]
+#![warn(overflowing_literals)]
+#![warn(path_statements)]
+#![warn(patterns_in_fns_without_body)]
+#![warn(private_in_public)]
+#![warn(rust_2018_idioms)]
+#![warn(trivial_casts)]
+#![warn(trivial_numeric_casts)]
+#![warn(unconditional_recursion)]
+#![warn(unreachable_pub)]
+#![warn(unused)]
+#![warn(unused_allocation)]
+#![warn(unused_comparisons)]
+#![warn(unused_parens)]
+#![warn(unused_qualifications)]
+#![warn(unused_results)]
+#![warn(variant_size_differences)]
+#![warn(while_true)]
+
+
 // Module declarations.
-#[warn(missing_docs)]
 pub mod utilities;
-#[warn(missing_docs)]
 pub mod cmyk;
-#[warn(missing_docs)]
 pub mod hsl;
-#[warn(missing_docs)]
 pub mod hsv;
-#[warn(missing_docs)]
 pub mod rgb;
-#[warn(missing_docs)]
 pub mod xyz;
+
 #[cfg(test)]
 mod tests;
 
 // Local imports.
-use utilities::clamped;
+use crate::utilities::clamped;
 
 // Standard library imports.
 use std::fmt;
 
 // Exports.
-pub use cmyk::Cmyk;
-pub use hsl::Hsl;
-pub use hsv::Hsv;
-pub use rgb::Rgb;
-pub use xyz::Xyz;
+pub use crate::cmyk::Cmyk;
+pub use crate::hsl::Hsl;
+pub use crate::hsv::Hsv;
+pub use crate::rgb::Rgb;
+pub use crate::xyz::Xyz;
 
 
 // /// Standard SRGB gamma correction matrix. This gives the relative intensities 
@@ -1523,21 +1548,21 @@ impl Color {
 
 
 impl fmt::Display for Color {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "{:?}", self)
     }
 }
 
 
 impl fmt::UpperHex for Color {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:X}", self.rgb)
     }
 }
 
 
 impl fmt::LowerHex for Color {
-    fn fmt(&self, f: &mut fmt::Formatter) -> Result<(), fmt::Error> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
         write!(f, "#{:x}", self.rgb)
     }
 }
