@@ -19,6 +19,12 @@ use crate::utilities::distance;
 use crate::utilities::lerp_u8;
 use crate::utilities::nearly_equal;
 
+// External library imports.
+#[cfg(feature = "serde")]
+use serde::{
+    Serialize,
+    Deserialize,
+}
 
 // Standard library imports.
 use std::convert::From;

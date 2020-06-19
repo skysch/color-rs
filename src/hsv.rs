@@ -20,6 +20,12 @@ use crate::utilities::clamped;
 use crate::utilities::lerp_f32;
 use crate::utilities::nearly_equal;
 
+// External library imports.
+#[cfg(feature = "serde")]
+use serde::{
+    Serialize,
+    Deserialize,
+}
 
 // Standard library imports.
 use std::convert::From;

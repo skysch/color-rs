@@ -55,6 +55,13 @@ mod tests;
 // Local imports.
 use crate::utilities::clamped;
 
+// External library imports.
+#[cfg(feature = "serde")]
+use serde::{
+    Serialize,
+    Deserialize,
+}
+
 // Standard library imports.
 use std::fmt;
 

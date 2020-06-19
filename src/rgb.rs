@@ -20,6 +20,13 @@ use crate::utilities::clamped;
 use crate::utilities::distance;
 use crate::utilities::lerp_u8;
 
+// External library imports.
+#[cfg(feature = "serde")]
+use serde::{
+    Serialize,
+    Deserialize,
+}
+
 // Standard library imports.
 use std::convert::From;
 use std::fmt;
