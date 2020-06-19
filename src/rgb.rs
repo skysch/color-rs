@@ -25,7 +25,7 @@ use crate::utilities::lerp_u8;
 use serde::{
     Serialize,
     Deserialize,
-}
+};
 
 // Standard library imports.
 use std::convert::From;

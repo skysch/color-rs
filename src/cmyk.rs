@@ -24,7 +24,7 @@ use crate::utilities::nearly_equal;
 use serde::{
     Serialize,
     Deserialize,
-}
+};
 
 // Standard library imports.
 use std::convert::From;

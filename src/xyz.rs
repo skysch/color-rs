@@ -24,7 +24,7 @@ use crate::utilities::lerp_f32;
 use serde::{
     Serialize,
     Deserialize,
-}
+};
 
 // Standard library imports.
 use std::convert::From;

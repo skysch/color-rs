@@ -60,7 +60,7 @@ use crate::utilities::clamped;
 use serde::{
     Serialize,
     Deserialize,
-}
+};
 
 // Standard library imports.
 use std::fmt;
