@@ -1,6 +1,6 @@
 [package]
 name = "color"
-version = "0.2.1"
+version = "0.2.3"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 edition = "2018"
 license = "MIT or Apache-2.0"
@@ -16,7 +16,7 @@ default = []
 [dependencies]
 
 # Optional dependencies
-serde = { version = "*", features=["derive"], optional = true }
+# serde = { version = "*", features=["derive"], optional = true }
 
 
 # Dependencies used for tests, examples, and benches.
