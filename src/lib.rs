@@ -80,6 +80,7 @@ pub use crate::xyz::Xyz;
 ////////////////////////////////////////////////////////////////////////////////
 /// An RGB encoded color with extension methods.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, PartialOrd, Ord, Default)]
+#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
 pub struct Color {
     /// The base RGB format of the color.
     rgb: Rgb

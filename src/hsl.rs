@@ -32,6 +32,7 @@ use std::f32;
 ////////////////////////////////////////////////////////////////////////////////
 /// The encoded HSL color.
 #[derive(Debug, PartialOrd, PartialEq, Clone, Copy, Default)]
+#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
 pub struct Hsl {
     /// The hue component.
     pub(crate) h: f32,

@@ -44,6 +44,7 @@ pub struct RgbHexCodeParseError;
 ////////////////////////////////////////////////////////////////////////////////
 /// The encoded RGB color.
 #[derive(Debug, PartialOrd, PartialEq, Eq, Hash, Ord, Clone, Copy, Default)]
+#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
 pub struct Rgb {
     /// The red component.
     pub r: u8,
