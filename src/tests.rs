@@ -12,10 +12,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Local imports.
-use crate::cmyk;
-use crate::hsl;
-use crate::hsv;
-use crate::rgb;
+use crate::cmyk::Cmyk;
+use crate::hsl::Hsl;
+use crate::hsv::Hsv;
+use crate::rgb::Rgb;
 
 use crate::utilities::close;
 
@@ -28,6 +28,17 @@ const UNIT: f32 = 1.0 / 255.0;
 ////////////////////////////////////////////////////////////////////////////////
 // Tests
 ////////////////////////////////////////////////////////////////////////////////
+
+/// Tests RGB hex parsing.
+#[test]
+fn rgb_hex_parse() {
+    let val = Rgb::from_hex_code("#112233");
+    assert_eq!(Ok(Rgb::from(0x112233)), val);
+
+    let val = Rgb::from_hex_code("#123");
+    assert_eq!(Ok(Rgb::from(0x112233)), val);
+}
+
 
 /// Tests color conversions for the color black.
 #[test]

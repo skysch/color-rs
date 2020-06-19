@@ -26,6 +26,19 @@ use std::fmt;
 use std::f32;
 use std::u8;
 
+
+////////////////////////////////////////////////////////////////////////////////
+// HexCodeParseError
+////////////////////////////////////////////////////////////////////////////////
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+/// An error which can be returned while parsing an RGB hex code.
+/// 
+/// This error is returned by [`Rgb::from_hex_code`] if the parse fails.
+///
+/// [`Rgb::from_hex_code`]: struct.Rgb.html#method.from_hex_code
+pub struct RgbHexCodeParseError;
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // Rgb
 ////////////////////////////////////////////////////////////////////////////////
@@ -62,6 +75,69 @@ impl Rgb {
     /// ```
     pub fn new(red: u8, green: u8, blue: u8) -> Self {
         Rgb {r: red, g: green, b: blue}
+    }
+
+    /// Constructs a new `Rgb` color by parsing a hex code.
+    ///
+    /// Both three and six digit variations are acceptable, and the longest will
+    /// be used.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::Rgb;
+    /// # fn example() -> Result<(), Box<Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color = Rgb::from_hex_code("#a1b2c3");
+    /// let color_short = Rgb::from_hex_code("#abc");
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn from_hex_code(hex: &str) -> Result<Rgb, RgbHexCodeParseError> {
+        if !hex.starts_with("#") || hex.len() < 4 {
+            return Err(RgbHexCodeParseError);
+        }
+
+        Rgb::from_hex_code_6(&hex[1..])
+            .or_else(|_| Rgb::from_hex_code_3(&hex[1..]))
+    }
+
+    fn from_hex_code_6(hex: &str) -> Result<Rgb, RgbHexCodeParseError> {
+        if hex.len() != 6 {
+            return Err(RgbHexCodeParseError);
+        }
+
+        match u32::from_str_radix(&hex[0..6], 16) {
+            Ok(v) => Ok(Rgb::from(v)),
+            Err(_) => Err(RgbHexCodeParseError),
+        }
+    }
+
+    fn from_hex_code_3(hex: &str) -> Result<Rgb, RgbHexCodeParseError> {
+        if hex.len() != 3 {
+            return Err(RgbHexCodeParseError);
+        }
+
+        match u32::from_str_radix(&hex[0..3], 16) {
+            Ok(v) => {
+                // Expand three digits into six.
+                let mut expanded = 0;
+                expanded |= v & 0x00F;
+                expanded |= (v & 0x00F) << 4;
+                expanded |= (v & 0x0F0) << 4;
+                expanded |= (v & 0x0F0) << 8;
+                expanded |= (v & 0xF00) << 8;
+                expanded |= (v & 0xF00) << 12;
+                Ok(Rgb::from(expanded))
+            }
+            Err(_) => Err(RgbHexCodeParseError),
+        }
     }
 
     /// Returns the red component.
