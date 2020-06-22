@@ -37,7 +37,7 @@ use std::u8;
 ////////////////////////////////////////////////////////////////////////////////
 /// The encoded CMYK color.
 #[derive(Debug, PartialOrd, PartialEq, Eq, Hash, Ord, Clone, Copy, Default)]
-#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Cmyk {
     /// The cyan component.
     pub c: u8,

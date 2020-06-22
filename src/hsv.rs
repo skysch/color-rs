@@ -37,7 +37,7 @@ use std::f32;
 ////////////////////////////////////////////////////////////////////////////////
 /// The encoded HSV color.
 #[derive(Debug, PartialOrd, PartialEq, Clone, Copy, Default)]
-#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Hsv {
     /// The hue component.
     pub(crate) h: f32,

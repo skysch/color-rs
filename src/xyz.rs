@@ -38,7 +38,7 @@ use std::f32;
 ////////////////////////////////////////////////////////////////////////////////
 /// The encoded XYZ color.
 #[derive(Debug, PartialOrd, PartialEq, Clone, Copy, Default)]
-#[cfg_attr(feature = "serde", derive(Serialize), derive(Deserialize))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Xyz {
     /// The x component.
     pub x: f32,
