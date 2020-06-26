@@ -16,9 +16,9 @@ use crate::hsl::Hsl;
 use crate::rgb::Rgb;
 use crate::xyz::Xyz;
 
-use crate::utilities::clamped;
-use crate::utilities::lerp_f32;
-use crate::utilities::nearly_equal;
+use crate::utility::clamped;
+use crate::utility::lerp_f32;
+use crate::utility::nearly_equal;
 
 // External library imports.
 #[cfg(feature = "serde")]

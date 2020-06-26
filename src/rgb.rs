@@ -16,9 +16,9 @@ use crate::hsl::Hsl;
 use crate::hsv::Hsv;
 use crate::xyz::Xyz;
 
-use crate::utilities::clamped;
-use crate::utilities::distance;
-use crate::utilities::lerp_u8;
+use crate::utility::clamped;
+use crate::utility::distance;
+use crate::utility::lerp_u8;
 
 // External library imports.
 #[cfg(feature = "serde")]

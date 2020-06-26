@@ -28,7 +28,7 @@ use std::ops::Sub;
 /// ```rust
 /// # use std::error::Error;
 /// # use std::f32;
-/// # use color::utilities::nearly_equal;
+/// # use color::utility::nearly_equal;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert!(nearly_equal(0.000002f32, 0.000001999999999f32));
@@ -77,7 +77,7 @@ pub fn nearly_equal(a: f32, b: f32) -> bool {
 /// ```rust
 /// # use std::error::Error;
 /// # use std::f32;
-/// # use color::utilities::close;
+/// # use color::utility::close;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert!(close(0.02f32, 0.03f32, 0.011));
@@ -110,7 +110,7 @@ pub fn close(a: f32, b: f32, precision: f32) -> bool {
 ///
 /// ```rust
 /// # use std::error::Error;
-/// # use color::utilities::clamped;
+/// # use color::utility::clamped;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(clamped(2.2, 4.3, 7.4), 4.3);
@@ -147,7 +147,7 @@ pub fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
 ///
 /// ```rust
 /// # use std::error::Error;
-/// # use color::utilities::distance;
+/// # use color::utility::distance;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(distance(2.2, 4.3), 2.0999999999999996);
@@ -176,7 +176,7 @@ pub fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
 ///
 /// ```rust
 /// # use std::error::Error;
-/// # use color::utilities::lerp_u8;
+/// # use color::utility::lerp_u8;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(lerp_u8(15, 167, 0.34), 66);
@@ -212,7 +212,7 @@ pub fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
 ///
 /// ```rust
 /// # use std::error::Error;
-/// # use color::utilities::lerp_f32;
+/// # use color::utility::lerp_f32;
 /// # fn example() -> Result<(), Box<Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(lerp_f32(15.0, 167.0, 0.34), 66.68);

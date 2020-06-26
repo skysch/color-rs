@@ -17,7 +17,7 @@ use crate::hsl::Hsl;
 use crate::hsv::Hsv;
 use crate::rgb::Rgb;
 
-use crate::utilities::close;
+use crate::utility::close;
 
 ////////////////////////////////////////////////////////////////////////////////
 // UNIT

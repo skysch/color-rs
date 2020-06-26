@@ -49,7 +49,7 @@
 
 
 // Module declarations.
-pub mod utilities;
+pub mod utility;
 pub mod cmyk;
 pub mod hsl;
 pub mod hsv;
@@ -57,10 +57,10 @@ pub mod rgb;
 pub mod xyz;
 
 #[cfg(test)]
-mod tests;
+mod test;
 
 // Local imports.
-use crate::utilities::clamped;
+use crate::utility::clamped;
 
 // External library imports.
 #[cfg(feature = "serde")]
