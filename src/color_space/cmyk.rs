@@ -11,9 +11,8 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use crate::hsl::Hsl;
-use crate::rgb::Rgb;
-
+use crate::Hsl;
+use crate::Rgb;
 use crate::utility::clamped;
 use crate::utility::distance;
 use crate::utility::lerp_u8;

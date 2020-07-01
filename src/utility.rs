@@ -47,7 +47,7 @@ use std::ops::Sub;
 /// # }
 /// ```
 #[inline]
-pub fn nearly_equal(a: f32, b: f32) -> bool {
+pub(crate) fn nearly_equal(a: f32, b: f32) -> bool {
     let abs_a = a.abs();
     let abs_b = b.abs();
     let diff = (a - b).abs();
@@ -97,7 +97,7 @@ pub fn nearly_equal(a: f32, b: f32) -> bool {
 /// ```
 #[inline]
 #[cfg(test)]
-pub fn close(a: f32, b: f32, precision: f32) -> bool {
+pub(crate) fn close(a: f32, b: f32, precision: f32) -> bool {
     (a - b).abs() < precision
 }
 
@@ -125,7 +125,7 @@ pub fn close(a: f32, b: f32, precision: f32) -> bool {
 /// # }
 /// ```
 #[inline]
-pub fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
+pub(crate) fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
     where T: PartialOrd
 {
     assert!(lower_bound <= upper_bound);
@@ -161,7 +161,7 @@ pub fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
 /// # }
 /// ```
 #[inline]
-pub fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
+pub(crate) fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
     if a > b {a - b} else {b - a}
 }
 
@@ -189,7 +189,7 @@ pub fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
 /// # }
 /// ```
 #[inline]
-pub fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
+pub(crate) fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
     let a = if start > end {
         1.0 - clamped(amount, 0.0, 1.0)
     } else {
@@ -225,7 +225,7 @@ pub fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
 /// # }
 /// ```
 #[inline]
-pub fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
+pub(crate) fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
     let a = if start > end {
         1.0 - clamped(amount, 0.0, 1.0)
     } else {

@@ -11,14 +11,13 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use crate::cmyk::Cmyk;
-use crate::hsl::Hsl;
-use crate::hsv::Hsv;
-use crate::xyz::Xyz;
-
+use crate::Cmyk;
+use crate::Hsl;
+use crate::Hsv;
 use crate::utility::clamped;
 use crate::utility::distance;
 use crate::utility::lerp_u8;
+use crate::Xyz;
 
 // External library imports.
 #[cfg(feature = "serde")]

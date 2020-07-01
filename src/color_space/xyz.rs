@@ -11,11 +11,10 @@
 //!
 ////////////////////////////////////////////////////////////////////////////////
 // Local imports.
-use crate::cmyk::Cmyk;
-use crate::hsl::Hsl;
-use crate::hsv::Hsv;
-use crate::rgb::Rgb;
-
+use crate::Cmyk;
+use crate::Hsl;
+use crate::Hsv;
+use crate::Rgb;
 use crate::utility::clamped;
 use crate::utility::lerp_f32;
 
