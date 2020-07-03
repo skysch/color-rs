@@ -12,10 +12,10 @@
 //! | Feature | Description |
 //! | ------- | ----------- |
 //! | "serde" | Enables serialization and deserialization of data using [serde](https://crates.io/crates/serde). |
+//! | "parse" | Enables FromStr implementations for colors. |
 //!
-//! By default, there are no features enabled.
+//! Only the "parse" feature is enabled by default.
 ////////////////////////////////////////////////////////////////////////////////
-// #![doc(html_root_url = "https://docs.rs/color/0.2.1")]
 #![warn(anonymous_parameters)]
 #![warn(bad_style)]
 #![warn(bare_trait_objects)]
@@ -49,9 +49,11 @@
 
 
 // Internal modules.
-pub(crate) mod utility;
+pub(in crate) mod utility;
 mod color_space;
 mod color;
+#[cfg(feature = "parse")]
+mod parse;
 
 #[cfg(test)]
 mod test;

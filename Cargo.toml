@@ -1,6 +1,6 @@
 [package]
 name = "color"
-version = "0.2.11"
+version = "0.2.12"
 authors = ["Skylor R Schermer <skyschermer@gmail.com>"]
 edition = "2018"
 license = "MIT or Apache-2.0"
@@ -10,7 +10,8 @@ license = "MIT or Apache-2.0"
 name = "color"
 
 [features]
-default = []
+default = ["parse"]
+parse = []
 
 # Required dependencies
 [dependencies]

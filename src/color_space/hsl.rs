@@ -40,11 +40,11 @@ use std::f32;
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Hsl {
     /// The hue component.
-    pub(crate) h: f32,
+    pub(in crate) h: f32,
     /// The saturation component.
-    pub(crate) s: f32,
+    pub(in crate) s: f32,
     /// The lightness component.
-    pub(crate) l: f32,
+    pub(in crate) l: f32,
 }
 
 

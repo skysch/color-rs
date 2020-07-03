@@ -10,8 +10,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 // Internal modules.
-pub mod cmyk;
-pub mod hsl;
-pub mod hsv;
-pub mod rgb;
-pub mod xyz;
+pub(in crate) mod cmyk;
+pub(in crate) mod hsl;
+pub(in crate) mod hsv;
+pub(in crate) mod rgb;
+pub(in crate) mod xyz;
