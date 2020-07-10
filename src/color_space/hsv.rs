@@ -55,7 +55,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsv::new(134.0, 0.23, 0.55);
     /// # //-------------------------------------------------------------------
@@ -81,7 +81,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsv::new(134.0, 0.23, 0.55);
     ///
@@ -105,7 +105,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsv::new(134.0, 0.23, 0.55);
     ///
@@ -129,7 +129,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsv::new(134.0, 0.23, 0.55);
     ///
@@ -153,7 +153,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsv::new(134.0, 0.23, 0.55);
     /// color.set_hue(267.0);
@@ -178,7 +178,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsv::new(134.0, 0.23, 0.55);
     /// color.set_saturation(0.80);
@@ -203,7 +203,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsv::new(134.0, 0.23, 0.55);
     /// color.set_value(0.80);
@@ -228,7 +228,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsv::new(134.0, 0.23, 0.55);
     ///
@@ -256,7 +256,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Hsv::new(34.0, 0.63, 0.35);
     /// let color_b = Hsv::new(322.0, 0.14, 0.95);
@@ -291,7 +291,7 @@ impl Hsv {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsv;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Hsv::new(34.0, 0.63, 0.35);
     /// let color_b = Hsv::new(322.0, 0.14, 0.95);

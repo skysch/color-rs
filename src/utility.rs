@@ -29,7 +29,7 @@ use std::ops::Sub;
 /// # use std::error::Error;
 /// # use std::f32;
 /// # use color::utility::nearly_equal;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert!(nearly_equal(0.000002f32, 0.000001999999999f32));
 ///
@@ -47,7 +47,7 @@ use std::ops::Sub;
 /// # }
 /// ```
 #[inline]
-pub(in crate) fn nearly_equal(a: f32, b: f32) -> bool {
+pub fn nearly_equal(a: f32, b: f32) -> bool {
     let abs_a = a.abs();
     let abs_b = b.abs();
     let diff = (a - b).abs();
@@ -78,7 +78,7 @@ pub(in crate) fn nearly_equal(a: f32, b: f32) -> bool {
 /// # use std::error::Error;
 /// # use std::f32;
 /// # use color::utility::close;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert!(close(0.02f32, 0.03f32, 0.011));
 ///
@@ -97,7 +97,7 @@ pub(in crate) fn nearly_equal(a: f32, b: f32) -> bool {
 /// ```
 #[inline]
 #[cfg(test)]
-pub(in crate) fn close(a: f32, b: f32, precision: f32) -> bool {
+pub fn close(a: f32, b: f32, precision: f32) -> bool {
     (a - b).abs() < precision
 }
 
@@ -111,7 +111,7 @@ pub(in crate) fn close(a: f32, b: f32, precision: f32) -> bool {
 /// ```rust
 /// # use std::error::Error;
 /// # use color::utility::clamped;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(clamped(2.2, 4.3, 7.4), 4.3);
 /// assert_eq!(clamped(5.0, 4.3, 7.4), 5.0);
@@ -125,7 +125,7 @@ pub(in crate) fn close(a: f32, b: f32, precision: f32) -> bool {
 /// # }
 /// ```
 #[inline]
-pub(in crate) fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
+pub fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
     where T: PartialOrd
 {
     assert!(lower_bound <= upper_bound);
@@ -148,7 +148,7 @@ pub(in crate) fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
 /// ```rust
 /// # use std::error::Error;
 /// # use color::utility::distance;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(distance(2.2, 4.3), 2.0999999999999996);
 /// assert_eq!(distance(4.3, 2.2), 2.0999999999999996);
@@ -161,7 +161,7 @@ pub(in crate) fn clamped<T>(value: T, lower_bound: T, upper_bound: T) -> T
 /// # }
 /// ```
 #[inline]
-pub(in crate) fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
+pub fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOrd {
     if a > b {a - b} else {b - a}
 }
 
@@ -177,7 +177,7 @@ pub(in crate) fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOr
 /// ```rust
 /// # use std::error::Error;
 /// # use color::utility::lerp_u8;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(lerp_u8(15, 167, 0.34), 66);
 /// # //-------------------------------------------------------------------
@@ -189,7 +189,7 @@ pub(in crate) fn distance<T>(a: T, b: T) -> T where T: Sub<Output=T> + PartialOr
 /// # }
 /// ```
 #[inline]
-pub(in crate) fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
+pub fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
     let a = if start > end {
         1.0 - clamped(amount, 0.0, 1.0)
     } else {
@@ -213,7 +213,7 @@ pub(in crate) fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
 /// ```rust
 /// # use std::error::Error;
 /// # use color::utility::lerp_f32;
-/// # fn example() -> Result<(), Box<Error>> {
+/// # fn example() -> Result<(), Box<dyn Error>> {
 /// # //-------------------------------------------------------------------
 /// assert_eq!(lerp_f32(15.0, 167.0, 0.34), 66.68);
 /// # //-------------------------------------------------------------------
@@ -225,7 +225,7 @@ pub(in crate) fn lerp_u8(start: u8, end:u8, amount: f32) -> u8 {
 /// # }
 /// ```
 #[inline]
-pub(in crate) fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
+pub fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
     let a = if start > end {
         1.0 - clamped(amount, 0.0, 1.0)
     } else {

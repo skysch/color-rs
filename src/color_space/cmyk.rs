@@ -57,7 +57,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk::new(127, 255, 64, 100);
     /// # //-------------------------------------------------------------------
@@ -85,7 +85,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -109,7 +109,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -133,7 +133,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -157,7 +157,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -186,7 +186,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -217,7 +217,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -248,7 +248,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -279,7 +279,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -305,7 +305,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -331,7 +331,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -363,7 +363,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Cmyk {c: 127, m: 255, y: 64, k: 100};
     ///
@@ -392,7 +392,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Cmyk {c: 127, m: 255, y: 64, k: 100};
     /// let color_b = Cmyk {c: 15, m: 144, y: 99, k: 140};
@@ -428,7 +428,7 @@ impl Cmyk {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Cmyk;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Cmyk {c: 127, y: 255, m: 64, k: 100};
     /// let color_b = Cmyk {c: 15, y: 144, m: 99, k: 140};

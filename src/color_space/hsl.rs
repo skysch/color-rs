@@ -56,7 +56,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsl::new(134.0, 0.23, 0.55);
     /// # //-------------------------------------------------------------------
@@ -82,7 +82,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsl::new(134.0, 0.23, 0.55);
     ///
@@ -106,7 +106,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsl::new(134.0, 0.23, 0.55);
     ///
@@ -130,7 +130,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsl::new(134.0, 0.23, 0.55);
     ///
@@ -154,7 +154,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsl::new(134.0, 0.23, 0.55);
     /// color.set_hue(267.0);
@@ -179,7 +179,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsl::new(134.0, 0.23, 0.55);
     /// color.set_saturation(0.80);
@@ -204,7 +204,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Hsl::new(134.0, 0.23, 0.55);
     /// color.set_lightness(0.80);
@@ -229,7 +229,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Hsl::new(134.0, 0.23, 0.55);
     ///
@@ -257,7 +257,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Hsl::new(34.0, 0.63, 0.35);
     /// let color_b = Hsl::new(322.0, 0.14, 0.95);
@@ -292,7 +292,7 @@ impl Hsl {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Hsl;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Hsl::new(34.0, 0.63, 0.35);
     /// let color_b = Hsl::new(322.0, 0.14, 0.95);

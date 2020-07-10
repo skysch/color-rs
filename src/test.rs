@@ -16,7 +16,6 @@ use crate::Cmyk;
 use crate::Hsl;
 use crate::Hsv;
 use crate::Rgb;
-
 use crate::utility::close;
 
 ////////////////////////////////////////////////////////////////////////////////

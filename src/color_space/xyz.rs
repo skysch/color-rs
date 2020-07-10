@@ -56,7 +56,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Xyz::new(0.24, 0.68, 0.91);
     /// # //-------------------------------------------------------------------
@@ -82,7 +82,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -106,7 +106,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -130,7 +130,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -154,7 +154,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -180,7 +180,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -205,7 +205,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Xyz::new(0.24, 0.68, 0.91);
     /// 
@@ -230,7 +230,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Xyz::new(0.24, 0.68, 0.91);
     ///
@@ -258,7 +258,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Xyz::new(0.24, 0.68, 0.91);
     /// let color_b = Xyz::new(0.84, 0.228, 0.455);
@@ -293,7 +293,7 @@ impl Xyz {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::Xyz;
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Xyz::new(0.24, 0.68, 0.91);
     /// let color_b = Xyz::new(0.84, 0.228, 0.455);

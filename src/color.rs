@@ -1,3 +1,15 @@
+// Copyright 2018 Skylor R. Schermer.
+//
+// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
+// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
+// option. This file may not be copied, modified, or distributed
+// except according to those terms.
+////////////////////////////////////////////////////////////////////////////////
+//!
+//! An abstract color.
+//!
+////////////////////////////////////////////////////////////////////////////////
 
 // Local imports.
 use crate::Cmyk;
@@ -40,7 +52,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// # //-------------------------------------------------------------------
@@ -66,7 +78,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -92,7 +104,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -118,7 +130,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -144,7 +156,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -170,7 +182,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -196,7 +208,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -222,7 +234,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -248,7 +260,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -274,7 +286,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -300,7 +312,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -326,7 +338,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -352,7 +364,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -378,7 +390,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -406,7 +418,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -434,7 +446,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -467,7 +479,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -502,7 +514,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -537,7 +549,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -572,7 +584,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -608,7 +620,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -643,7 +655,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -678,7 +690,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -713,7 +725,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -748,7 +760,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -785,7 +797,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -820,7 +832,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -856,7 +868,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -892,7 +904,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -928,7 +940,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -964,7 +976,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1000,7 +1012,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1030,7 +1042,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1058,7 +1070,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1086,7 +1098,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1114,7 +1126,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1142,7 +1154,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1170,7 +1182,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1198,7 +1210,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1224,7 +1236,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
     ///
@@ -1252,7 +1264,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1285,7 +1297,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1318,7 +1330,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1351,7 +1363,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1382,7 +1394,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1411,7 +1423,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1440,7 +1452,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1469,7 +1481,7 @@ impl Color {
     /// ```rust
     /// # use std::error::Error;
     /// # use color::{Color, Rgb};
-    /// # fn example() -> Result<(), Box<Error>> {
+    /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
@@ -1492,23 +1504,17 @@ impl Color {
 
 
 
-impl fmt::Display for Color {
-    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
-        write!(f, "{:?}", self)
-    }
-}
-
 
 impl fmt::UpperHex for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
-        write!(f, "#{:X}", self.rgb)
+        write!(f, "{:X}", self.rgb)
     }
 }
 
 
 impl fmt::LowerHex for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
-        write!(f, "#{:x}", self.rgb)
+        write!(f, "{:x}", self.rgb)
     }
 }
 

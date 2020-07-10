@@ -49,7 +49,7 @@
 
 
 // Internal modules.
-pub(in crate) mod utility;
+pub mod utility;
 mod color_space;
 mod color;
 #[cfg(feature = "parse")]
@@ -64,7 +64,7 @@ pub use color_space::hsl::Hsl;
 pub use color_space::hsv::Hsv;
 pub use color_space::rgb::Rgb;
 pub use color_space::xyz::Xyz;
-pub use color::Color;
+pub use crate::color::Color;
 
 
 
