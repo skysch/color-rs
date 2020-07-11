@@ -1280,8 +1280,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn rgb_lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Rgb> + Sized
+    pub fn rgb_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Rgb> + Sized,
+            D: Into<Rgb> + Sized,
     {
         Rgb::lerp(start.into(), end.into(), amount).into()
     }
@@ -1313,8 +1315,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn cmyk_lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Cmyk> + Sized
+    pub fn cmyk_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Cmyk> + Sized,
+            D: Into<Cmyk> + Sized,
     {
         Cmyk::lerp(start.into(), end.into(), amount).into()
     }
@@ -1346,8 +1350,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsl_lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Hsl> + Sized
+    pub fn hsl_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Hsl> + Sized,
+            D: Into<Hsl> + Sized,
     {
         Hsl::lerp(start.into(), end.into(), amount).into()
     }
@@ -1379,8 +1385,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsv_lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Hsv> + Sized
+    pub fn hsv_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Hsv> + Sized,
+            D: Into<Hsv> + Sized,
     {
         Hsv::lerp(start.into(), end.into(), amount).into()
     }
@@ -1408,8 +1416,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn rgb_distance<C>(start: C, end: C) -> f32 
-        where C: Into<Rgb> + Sized
+    pub fn rgb_distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Rgb> + Sized,
+            D: Into<Rgb> + Sized,
     {
         Rgb::distance(start.into(), end.into())
     }
@@ -1437,8 +1447,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn cmyk_distance<C>(start: C, end: C) -> f32 
-        where C: Into<Cmyk> + Sized
+    pub fn cmyk_distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Cmyk> + Sized,
+            D: Into<Cmyk> + Sized,
     {
         Cmyk::distance(start.into(), end.into())
     }
@@ -1466,8 +1478,10 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsl_distance<C>(start: C, end: C) -> f32 
-        where C: Into<Hsl> + Sized
+    pub fn hsl_distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Hsl> + Sized,
+            D: Into<Hsl> + Sized,
     {
         Hsl::distance(start.into(), end.into())
     }
@@ -1495,14 +1509,14 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsv_distance<C>(start: C, end: C) -> f32 
-        where C: Into<Hsv> + Sized
+    pub fn hsv_distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Hsv> + Sized,
+            D: Into<Hsv> + Sized,
     {
         Hsv::distance(start.into(), end.into())
     }
 }
-
-
 
 
 impl fmt::UpperHex for Color {
@@ -1510,7 +1524,6 @@ impl fmt::UpperHex for Color {
         write!(f, "{:X}", self.rgb)
     }
 }
-
 
 impl fmt::LowerHex for Color {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {

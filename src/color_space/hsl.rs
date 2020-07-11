@@ -273,8 +273,10 @@ impl Hsl {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Self> + Sized
+    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
     {
         let s = start.into();
         let e = end.into();

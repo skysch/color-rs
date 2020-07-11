@@ -272,8 +272,10 @@ impl Hsv {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C>(start: C, end: C, amount: f32) -> Self 
-        where C: Into<Self> + Sized
+    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
     {
         let s = start.into();
         let e = end.into();
@@ -305,8 +307,10 @@ impl Hsv {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn distance<C>(start: C, end: C) -> f32 
-        where C: Into<Self> + Sized
+    pub fn distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
     {
         let s = start.into();
         let e = end.into();
