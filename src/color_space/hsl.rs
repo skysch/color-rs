@@ -262,7 +262,7 @@ impl Hsl {
     /// let color_a = Hsl::new(34.0, 0.63, 0.35);
     /// let color_b = Hsl::new(322.0, 0.14, 0.95);
     ///
-    /// let lerp_color = Hsl::lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Hsl::linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Hsl::new(221.2, 0.3115, 0.74));
     /// # //-------------------------------------------------------------------
@@ -273,7 +273,7 @@ impl Hsl {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Self> + Sized,
             D: Into<Self> + Sized,

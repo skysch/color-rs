@@ -261,7 +261,7 @@ impl Hsv {
     /// let color_a = Hsv::new(34.0, 0.63, 0.35);
     /// let color_b = Hsv::new(322.0, 0.14, 0.95);
     ///
-    /// let lerp_color = Hsv::lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Hsv::linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Hsv::new(221.2, 0.3115, 0.74));
     /// # //-------------------------------------------------------------------
@@ -272,7 +272,7 @@ impl Hsv {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Self> + Sized,
             D: Into<Self> + Sized,

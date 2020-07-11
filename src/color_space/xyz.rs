@@ -263,7 +263,7 @@ impl Xyz {
     /// let color_a = Xyz::new(0.24, 0.68, 0.91);
     /// let color_b = Xyz::new(0.84, 0.228, 0.455);
     ///
-    /// let lerp_color = Xyz::lerp(color_a, color_b, 0.19);
+    /// let lerp_color = Xyz::linear_interpolate(color_a, color_b, 0.19);
     ///
     /// assert_eq!(lerp_color, Xyz::new(0.35399997, 0.59412, 0.82355));
     /// # //-------------------------------------------------------------------
@@ -274,7 +274,7 @@ impl Xyz {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Self> + Sized,
             D: Into<Self> + Sized,

@@ -397,7 +397,7 @@ impl Cmyk {
     /// let color_a = Cmyk {c: 127, m: 255, y: 64, k: 100};
     /// let color_b = Cmyk {c: 15, m: 144, y: 99, k: 140};
     ///
-    /// let lerp_color = Cmyk::lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Cmyk::linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Cmyk {c: 54, m: 182, y: 86, k: 126});
     /// # //-------------------------------------------------------------------
@@ -408,7 +408,7 @@ impl Cmyk {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Self> + Sized,
             D: Into<Self> + Sized,

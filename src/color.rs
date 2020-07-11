@@ -1269,7 +1269,7 @@ impl Color {
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
     ///
-    /// let lerp_color = Color::rgb_lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Color::rgb_linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Rgb {r: 54, g: 182, b: 86}.into());
     /// # //-------------------------------------------------------------------
@@ -1280,12 +1280,12 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn rgb_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn rgb_linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Rgb> + Sized,
             D: Into<Rgb> + Sized,
     {
-        Rgb::lerp(start.into(), end.into(), amount).into()
+        Rgb::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
     /// Performs an [`Cmyk`] component-wise linear interpolation between given 
@@ -1304,7 +1304,7 @@ impl Color {
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
     ///
-    /// let lerp_color = Color::cmyk_lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Color::cmyk_linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Rgb {r: 44, g: 183, b: 98}.into());
     /// # //-------------------------------------------------------------------
@@ -1315,12 +1315,12 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn cmyk_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn cmyk_linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Cmyk> + Sized,
             D: Into<Cmyk> + Sized,
     {
-        Cmyk::lerp(start.into(), end.into(), amount).into()
+        Cmyk::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
     /// Performs an [`Hsl`] component-wise linear interpolation between given 
@@ -1339,7 +1339,7 @@ impl Color {
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
     ///
-    /// let lerp_color = Color::hsl_lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Color::hsl_linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Rgb {r: 28, g: 186, b: 76}.into());
     /// # //-------------------------------------------------------------------
@@ -1350,12 +1350,12 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsl_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn hsl_linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Hsl> + Sized,
             D: Into<Hsl> + Sized,
     {
-        Hsl::lerp(start.into(), end.into(), amount).into()
+        Hsl::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
     /// Performs an [`Hsv`] component-wise linear interpolation between given 
@@ -1374,7 +1374,7 @@ impl Color {
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
     /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
     ///
-    /// let lerp_color = Color::hsv_lerp(color_a, color_b, 0.65);
+    /// let lerp_color = Color::hsv_linear_interpolate(color_a, color_b, 0.65);
     ///
     /// assert_eq!(lerp_color, Rgb {r: 28, g: 182, b: 75}.into());
     /// # //-------------------------------------------------------------------
@@ -1385,12 +1385,12 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
-    pub fn hsv_lerp<C, D>(start: C, end: D, amount: f32) -> Self 
+    pub fn hsv_linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
         where
             C: Into<Hsv> + Sized,
             D: Into<Hsv> + Sized,
     {
-        Hsv::lerp(start.into(), end.into(), amount).into()
+        Hsv::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
     /// Returns the distance between the given colors in [`Rgb`] color space.
