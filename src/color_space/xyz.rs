@@ -15,6 +15,7 @@ use crate::Cmyk;
 use crate::Hsl;
 use crate::Hsv;
 use crate::Rgb;
+use crate::utility::cerp_f32;
 use crate::utility::clamped;
 use crate::utility::lerp_f32;
 
@@ -285,6 +286,52 @@ impl Xyz {
             x: lerp_f32(s.x, e.x, amount),
             y: lerp_f32(s.y, e.y, amount),
             z: lerp_f32(s.z, e.z, amount),
+        }
+    }
+
+    /// Performs a component-wise cubic interpolation between given colors,
+    /// returning the color located at the ratio given by `amount`, which is
+    /// clamped between 1 and 0. The interpolation function will be consistent
+    /// with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::Xyz;
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Xyz::new(0.24, 0.68, 0.91);
+    /// let color_b = Xyz::new(0.84, 0.228, 0.455);
+    ///
+    /// let lerp_color = Xyz::cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.19);
+    ///
+    /// assert_eq!(lerp_color, Xyz::new(0.29674917, 0.63724893, 0.8669652));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        let s = start.into();
+        let e = end.into();
+        Xyz {
+            x: cerp_f32(s.x, e.x, start_slope, end_slope, amount),
+            y: cerp_f32(s.y, e.y, start_slope, end_slope, amount),
+            z: cerp_f32(s.z, e.z, start_slope, end_slope, amount),
         }
     }
 

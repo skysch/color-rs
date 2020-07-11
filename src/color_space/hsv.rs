@@ -14,6 +14,7 @@
 use crate::Cmyk;
 use crate::Hsl;
 use crate::Rgb;
+use crate::utility::cerp_f32;
 use crate::utility::clamped;
 use crate::utility::lerp_f32;
 use crate::utility::nearly_equal;
@@ -283,6 +284,52 @@ impl Hsv {
             h: lerp_f32(s.h, e.h, amount),
             s: lerp_f32(s.s, e.s, amount),
             v: lerp_f32(s.v, e.v, amount),
+        }
+    }
+
+    /// Performs a component-wise cubic interpolation between given colors,
+    /// returning the color located at the ratio given by `amount`, which is
+    /// clamped between 1 and 0. The interpolation function will be consistent
+    /// with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::Hsv;
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Hsv::new(0.24, 0.68, 0.91);
+    /// let color_b = Hsv::new(0.84, 0.228, 0.455);
+    ///
+    /// let lerp_color = Hsv::cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.19);
+    ///
+    /// assert_eq!(lerp_color, Hsv::new(0.29674917, 0.63724893, 0.8669652));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        let s = start.into();
+        let e = end.into();
+        Hsv {
+            h: cerp_f32(s.h, e.h, start_slope, end_slope, amount),
+            s: cerp_f32(s.s, e.s, start_slope, end_slope, amount),
+            v: cerp_f32(s.v, e.v, start_slope, end_slope, amount),
         }
     }
 

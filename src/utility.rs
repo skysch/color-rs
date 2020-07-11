@@ -238,6 +238,58 @@ pub fn lerp_f32(start: f32, end:f32, amount: f32) -> f32 {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// cerp_u8
+////////////////////////////////////////////////////////////////////////////////
+/// Performs a cubic interpolation between `start` and `end`, returning the 
+/// value located at the ratio given by `amount`, which is clamped between 0
+/// and 1. The interpolation function will be consistent with the slopes given
+/// by `start_slope` and `end_slope`.
+///
+/// # Example
+///
+/// ```rust
+/// # use std::error::Error;
+/// # use color::utility::cerp_u8;
+/// # fn example() -> Result<(), Box<dyn Error>> {
+/// # //-------------------------------------------------------------------
+/// assert_eq!(cerp_u8(15, 167, 0.0, 0.0, 0.34), 55);
+/// # //-------------------------------------------------------------------
+/// #     Ok(())
+/// # }
+/// #
+/// # fn main() {
+/// #     example().unwrap();
+/// # }
+/// ```
+#[inline]
+pub fn cerp_u8(
+    start: u8,
+    end: u8,
+    start_slope: f32,
+    end_slope: f32,
+    amount: f32)
+    -> u8
+{
+    let a = if start > end {
+        1.0 - clamped(amount, 0.0, 1.0)
+    } else {
+        clamped(amount, 0.0, 1.0)
+    };
+
+    let s = if start > end {end} else {start};
+    let e = if start > end {start} else {end};
+
+    let a2 = a * a;
+    let a3 = a2 * a;
+
+    ((2.0*a3 - 3.0*a2 + 1.0) * (s as f32)
+        + (a3 - 2.0*a2 + a) * start_slope
+        + (-2.0*a3 + 3.0*a2) * (e as f32)
+        + (a3 - a2) * end_slope) as u8
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
 // cerp_f32
 ////////////////////////////////////////////////////////////////////////////////
 /// Performs a cubic interpolation between `start` and `end`, returning the 

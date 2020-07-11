@@ -51,7 +51,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -77,7 +77,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -103,7 +103,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -129,7 +129,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -155,7 +155,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -181,7 +181,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -207,7 +207,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -233,7 +233,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -259,7 +259,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -285,7 +285,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -311,7 +311,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -337,7 +337,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -363,7 +363,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -389,7 +389,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -417,7 +417,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -445,7 +445,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -478,7 +478,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -513,7 +513,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -548,7 +548,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -583,7 +583,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -619,7 +619,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -654,7 +654,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -689,7 +689,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -724,7 +724,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -759,7 +759,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -796,7 +796,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -831,7 +831,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -867,7 +867,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -903,7 +903,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -939,7 +939,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -975,7 +975,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1011,7 +1011,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let mut color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1041,7 +1041,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1069,7 +1069,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1097,7 +1097,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1125,7 +1125,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1153,7 +1153,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1181,7 +1181,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1209,7 +1209,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1235,7 +1235,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1263,7 +1263,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1288,6 +1288,54 @@ impl Color {
         Rgb::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
+    /// Performs an [`Rgb`] component-wise cubic interpolation between given
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0. The interpolation function will be
+    /// consistent with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// [`Rgb`]: hsv/struct.Rgb.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb::new(24, 68, 91));
+    /// let color_b = Color::new(Rgb::new(84, 228, 155));
+    ///
+    /// let cerp_color = Color::rgb_cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(cerp_color, 
+    ///     Color::new(Rgb::new(44, 122, 112)));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn rgb_cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        Rgb::cubic_interpolate(
+            start.into(),
+            end.into(),
+            start_slope,
+            end_slope,
+            amount).into()
+    }
+
     /// Performs an [`Cmyk`] component-wise linear interpolation between given 
     /// colors, returning the color located at the ratio given by `amount`,
     /// which is clamped between 1 and 0.
@@ -1298,7 +1346,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1323,6 +1371,54 @@ impl Color {
         Cmyk::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
+    /// Performs an [`Cmyk`] component-wise cubic interpolation between given
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0. The interpolation function will be
+    /// consistent with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// [`Cmyk`]: hsv/struct.Cmyk.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// let cerp_color = Color::rgb_cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(cerp_color, 
+    ///     Color::new(Rgb::new(89, 217, 75)));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn cmyk_cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        Cmyk::cubic_interpolate(
+            start.into(),
+            end.into(),
+            start_slope,
+            end_slope,
+            amount).into()
+    }
+
     /// Performs an [`Hsl`] component-wise linear interpolation between given 
     /// colors, returning the color located at the ratio given by `amount`,
     /// which is clamped between 1 and 0.
@@ -1333,7 +1429,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1358,6 +1454,54 @@ impl Color {
         Hsl::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
+    /// Performs an [`Hsl`] component-wise cubic interpolation between given
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0. The interpolation function will be
+    /// consistent with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// [`Hsl`]: hsv/struct.Hsl.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// let cerp_color = Color::hsl_cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(cerp_color, 
+    ///     Color::new(Rgb::new(50, 214, 50)));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn hsl_cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        Hsl::cubic_interpolate(
+            start.into(),
+            end.into(),
+            start_slope,
+            end_slope,
+            amount).into()
+    }
+
     /// Performs an [`Hsv`] component-wise linear interpolation between given 
     /// colors, returning the color located at the ratio given by `amount`,
     /// which is clamped between 1 and 0.
@@ -1368,7 +1512,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1393,6 +1537,138 @@ impl Color {
         Hsv::linear_interpolate(start.into(), end.into(), amount).into()
     }
 
+    /// Performs an [`Hsv`] component-wise cubic interpolation between given
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0. The interpolation function will be
+    /// consistent with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// [`Hsv`]: hsv/struct.Hsv.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// let cerp_color = Color::hsv_cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(cerp_color, 
+    ///     Color::new(Rgb::new(43, 217, 44)));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn hsv_cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        Hsv::cubic_interpolate(
+            start.into(),
+            end.into(),
+            start_slope,
+            end_slope,
+            amount).into()
+    }
+
+
+    /// Performs an [`Xyz`] component-wise linear interpolation between given 
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0.
+    ///
+    /// [`Xyz`]: hsv/struct.Xyz.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// let lerp_color = Color::xyz_linear_interpolate(color_a, color_b, 0.65);
+    ///
+    /// assert_eq!(lerp_color, Rgb {r: 54, g: 182, b: 86}.into());
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn xyz_linear_interpolate<C, D>(start: C, end: D, amount: f32) -> Self 
+        where
+            C: Into<Xyz> + Sized,
+            D: Into<Xyz> + Sized,
+    {
+        Xyz::linear_interpolate(start.into(), end.into(), amount).into()
+    }
+
+    /// Performs an [`Xyz`] component-wise cubic interpolation between given
+    /// colors, returning the color located at the ratio given by `amount`,
+    /// which is clamped between 1 and 0. The interpolation function will be
+    /// consistent with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// [`Xyz`]: hsv/struct.Xyz.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// let cerp_color = Color::xyz_cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(cerp_color, 
+    ///     Color::new(Rgb::new(89, 217, 75)));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn xyz_cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        Xyz::cubic_interpolate(
+            start.into(),
+            end.into(),
+            start_slope,
+            end_slope,
+            amount).into()
+    }
+
     /// Returns the distance between the given colors in [`Rgb`] color space.
     ///
     /// [`Rgb`]: rgb/struct.Rgb.html
@@ -1401,7 +1677,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1432,7 +1708,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1463,7 +1739,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1494,7 +1770,7 @@ impl Color {
     ///
     /// ```rust
     /// # use std::error::Error;
-    /// # use color::{Color, Rgb};
+    /// # use color::{ Color, Rgb };
     /// # fn example() -> Result<(), Box<dyn Error>> {
     /// # //-------------------------------------------------------------------
     /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
@@ -1515,6 +1791,37 @@ impl Color {
             D: Into<Hsv> + Sized,
     {
         Hsv::distance(start.into(), end.into())
+    }
+
+    /// Returns the distance between the given colors in [`Xyz`] color space.
+    ///
+    /// [`Xyz`]: hsv/struct.Xyz.html
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::{ Color, Rgb };
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Color::new(Rgb {r: 127, g: 255, b: 64});
+    /// let color_b = Color::new(Rgb {r: 15, g: 144, b: 99});
+    ///
+    /// assert_eq!(Color::xyz_distance(color_a, color_b), 0.5080837);
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn xyz_distance<C, D>(start: C, end: D) -> f32 
+        where
+            C: Into<Xyz> + Sized,
+            D: Into<Xyz> + Sized,
+    {
+        Xyz::distance(start.into(), end.into())
     }
 }
 
@@ -1598,6 +1905,13 @@ impl From<Color> for Hsl {
 }
 /// Converts the color to a Hsv.
 impl From<Color> for Hsv {
+    fn from(color: Color) -> Self {
+        color.rgb.into()
+    }
+}
+
+/// Converts the color to a Xyz.
+impl From<Color> for Xyz {
     fn from(color: Color) -> Self {
         color.rgb.into()
     }

@@ -13,6 +13,7 @@
 // Local imports.
 use crate::Hsl;
 use crate::Rgb;
+use crate::utility::cerp_u8;
 use crate::utility::clamped;
 use crate::utility::distance;
 use crate::utility::lerp_u8;
@@ -420,6 +421,54 @@ impl Cmyk {
             m: lerp_u8(s.m, e.m, amount),
             y: lerp_u8(s.y, e.y, amount),
             k: lerp_u8(s.k, e.k, amount),
+        }
+    }
+
+    /// Performs a component-wise cubic interpolation between given colors,
+    /// returning the color located at the ratio given by `amount`, which is
+    /// clamped between 1 and 0. The interpolation function will be consistent
+    /// with the slopes given by `start_slope` and `end_slope`.
+    ///
+    /// # Example
+    ///
+    /// ```rust
+    /// # use std::error::Error;
+    /// # use color::Cmyk;
+    /// # fn example() -> Result<(), Box<dyn Error>> {
+    /// # //-------------------------------------------------------------------
+    /// let color_a = Cmyk::new(24, 68, 91, 22);
+    /// let color_b = Cmyk::new(84, 228, 155, 78);
+    ///
+    /// let lerp_color = Cmyk::cubic_interpolate(
+    ///     color_a, color_b, 0.0, 0.0, 0.39);
+    ///
+    /// assert_eq!(lerp_color, 
+    ///     Cmyk::new(44, 122, 112, 40));
+    /// # //-------------------------------------------------------------------
+    /// #     Ok(())
+    /// # }
+    /// #
+    /// # fn main() {
+    /// #     example().unwrap();
+    /// # }
+    /// ```
+    pub fn cubic_interpolate<C, D>(
+        start: C,
+        end: D,
+        start_slope: f32,
+        end_slope: f32,
+        amount: f32) -> Self 
+        where
+            C: Into<Self> + Sized,
+            D: Into<Self> + Sized,
+    {
+        let s = start.into();
+        let e = end.into();
+        Cmyk {
+            c: cerp_u8(s.c, e.c, start_slope, end_slope, amount),
+            m: cerp_u8(s.m, e.m, start_slope, end_slope, amount),
+            y: cerp_u8(s.y, e.y, start_slope, end_slope, amount),
+            k: cerp_u8(s.k, e.k, start_slope, end_slope, amount),
         }
     }
 
