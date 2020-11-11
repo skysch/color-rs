@@ -170,7 +170,8 @@ impl Hsl {
     /// # }
     /// ```
     pub fn set_hue(&mut self, hue: f32) {
-        self.h = clamped(hue, f32::MIN, f32::MAX) % 360.0;
+        assert!(hue.is_finite());
+        self.h = hue % 360.0;
     }
 
     /// Sets the saturation component of the color as a ratio.
