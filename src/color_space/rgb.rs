@@ -1,4 +1,4 @@
-// Copyright 2018 Skylor R. Schermer.
+// Copyright 2020 Skylor R. Schermer.
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
@@ -622,7 +622,7 @@ impl From<Hsl> for Rgb {
             h if 180.0 <= h && h < 240.0 => Rgb::new(  m, x+m, c+m),
             h if 240.0 <= h && h < 300.0 => Rgb::new(x+m,   m, c+m),
             h if 300.0 <= h && h < 360.0 => Rgb::new(c+m,   m, x+m),
-            _ => unreachable!()
+            _ => unreachable!(),
         }       
     }
 }
@@ -642,7 +642,7 @@ impl From<Hsv> for Rgb {
             h if 180.0 <= h && h < 240.0 => (0.0,   x,   c),
             h if 240.0 <= h && h < 300.0 => (  x, 0.0,   c),
             h if 300.0 <= h && h < 360.0 => (  c, 0.0,   x),
-            _ => unreachable!()
+            _ => unreachable!(),
         };
 
         Rgb {

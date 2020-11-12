@@ -15,6 +15,7 @@ parse = []
 
 # Required dependencies
 [dependencies]
+tracing = "0.1" 
 
 # Optional dependencies
 serde = { version = "1.0", features=["derive"], optional = true }

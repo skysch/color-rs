@@ -1,4 +1,4 @@
-// Copyright 2018 Skylor R. Schermer.
+// Copyright 2020 Skylor R. Schermer.
 //
 // Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
 // http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
@@ -28,6 +28,7 @@ use serde::{
 
 // Standard library imports.
 use std::fmt;
+use std::fmt::Debug;
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -63,7 +64,11 @@ impl Color {
     /// #     example().unwrap();
     /// # }
     /// ```
+    
     pub fn new<C>(color: C) -> Self where C: Into<Rgb> {
+        let span = tracing::span!(tracing::Level::TRACE, "Color::new");
+        let _enter = span.enter();
+        
         Color {
             rgb: color.into(),
         }
