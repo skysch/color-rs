@@ -10,6 +10,7 @@
 //! Defines a 96-bit XYZ color space.
 //!
 ////////////////////////////////////////////////////////////////////////////////
+
 // Local imports.
 use crate::Cmyk;
 use crate::Hsl;
@@ -21,10 +22,12 @@ use crate::utility::lerp_f32;
 
 // External library imports.
 #[cfg(feature = "serde")]
-use serde::{
-    Serialize,
-    Deserialize,
-};
+use serde::Deserialize;
+#[cfg(feature = "serde")]
+use serde::Serialize;
+use tracing::Level;
+use tracing::span;
+
 
 // Standard library imports.
 use std::convert::From;
@@ -385,6 +388,9 @@ impl fmt::Display for Xyz {
 ////////////////////////////////////////////////////////////////////////////////
 impl From<[f32; 3]> for Xyz {
     fn from(components: [f32; 3]) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<[f32; 3]>");
+        let _enter = span.enter();
+        
         Xyz {
             x: components[0],
             y: components[1],
@@ -396,24 +402,36 @@ impl From<[f32; 3]> for Xyz {
 
 impl From<Cmyk> for Xyz {
     fn from(cmyk: Cmyk) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<Cmyk>");
+        let _enter = span.enter();
+        
         Xyz::from(Rgb::from(cmyk))
     }
 }
 
 impl From<Hsl> for Xyz {
     fn from(hsl: Hsl) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<Hsl>");
+        let _enter = span.enter();
+        
         Xyz::from(Rgb::from(hsl))
     }
 }
 
 impl From<Hsv> for Xyz {
     fn from(hsv: Hsv) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<Hsv>");
+        let _enter = span.enter();
+        
         Xyz::from(Rgb::from(hsv))
     }
 }
 
 impl From<Rgb> for Xyz {
     fn from(rgb: Rgb) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<Rgb>");
+        let _enter = span.enter();
+        
         let m = rgb.ratios(); 
 
         Xyz {

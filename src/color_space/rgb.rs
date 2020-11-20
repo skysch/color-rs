@@ -10,6 +10,7 @@
 //! Defines a 24-bit RGB color space.
 //!
 ////////////////////////////////////////////////////////////////////////////////
+
 // Local imports.
 use crate::Cmyk;
 use crate::Hsl;
@@ -22,10 +23,13 @@ use crate::Xyz;
 
 // External library imports.
 #[cfg(feature = "serde")]
-use serde::{
-    Serialize,
-    Deserialize,
-};
+use serde::Deserialize;
+#[cfg(feature = "serde")]
+use serde::Serialize;
+use tracing::Level;
+use tracing::event;
+use tracing::span;
+
 
 // Standard library imports.
 use std::convert::From;
@@ -531,38 +535,67 @@ impl fmt::LowerHex for Rgb {
 ////////////////////////////////////////////////////////////////////////////////
 impl From<u32> for Rgb {
     fn from(hex: u32) -> Self {
-        Rgb {
+        let span = span!(Level::DEBUG, "Rgb::from<u32>");
+        let _enter = span.enter();
+
+        event!(Level::TRACE, "hex={:0X}", hex);
+        
+        let rgb = Rgb {
             r: ((hex & 0xFF0000) >> 16) as u8,
             g: ((hex & 0x00FF00) >> 8) as u8,
             b: ((hex & 0x0000FF)) as u8,
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }
 
 
 impl From<[u8; 3]> for Rgb {
     fn from(octets: [u8; 3]) -> Self {
-        Rgb {
+        let span = span!(Level::DEBUG, "Rgb::from<[u8; 3]>");
+        let _enter = span.enter();
+        
+        event!(Level::TRACE, "octets=[{:0X}, {:0X}, {:0X}]",
+            octets[0], octets[1], octets[2]);
+
+        let rgb = Rgb {
             r: octets[0],
             g: octets[1],
             b: octets[2],
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }
 
 impl From<[f32; 3]> for Rgb {
     fn from(ratios: [f32; 3]) -> Self {
-        Rgb {
+        let span = span!(Level::DEBUG, "Rgb::from<[f32; 3]>");
+        let _enter = span.enter();
+
+        event!(Level::TRACE, "ratios=[{}, {}, {}]",
+            ratios[0], ratios[1], ratios[2]);
+        
+        let rgb = Rgb {
             r: (u8::MAX as f32 * clamped(ratios[0], 0.0, 1.0)) as u8,
             g: (u8::MAX as f32 * clamped(ratios[1], 0.0, 1.0)) as u8,
             b: (u8::MAX as f32 * clamped(ratios[2], 0.0, 1.0)) as u8,
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }
 
 /// Converts the color to an RGB vector.
 impl From<Rgb> for [f32; 3] {
     fn from(rgb: Rgb) -> Self {
+        let span = span!(Level::DEBUG, "[f32; 3]::from<Rgb>");
+        let _enter = span.enter();
+        
         [
             (rgb.r as f32) / (u8::MAX as f32),
             (rgb.g as f32) / (u8::MAX as f32),
@@ -574,6 +607,9 @@ impl From<Rgb> for [f32; 3] {
 /// Converts the color to an RGBA vector.
 impl From<Rgb> for [f32; 4] {
     fn from(rgb: Rgb) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<[f32; 4]>");
+        let _enter = span.enter();
+        
         [
             (rgb.r as f32) / (u8::MAX as f32),
             (rgb.g as f32) / (u8::MAX as f32),
@@ -585,37 +621,54 @@ impl From<Rgb> for [f32; 4] {
 
 impl From<Cmyk> for Rgb {
     fn from(cmyk: Cmyk) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<Cmyk>");
+        let _enter = span.enter();
+        
         let ratios = cmyk.ratios();
         let cn = 1.0 - ratios[0];
         let mn = 1.0 - ratios[1];
         let yn = 1.0 - ratios[2];
         let kn = 1.0 - ratios[3];
 
-        Rgb {
+        event!(Level::TRACE, "cn={}, mn={}, yn={}, kn={}", cn, mn, yn, kn);
+
+        let rgb = Rgb {
             r: (u8::MAX as f32 * cn * kn + 0.5) as u8,
             g: (u8::MAX as f32 * mn * kn + 0.5) as u8,
             b: (u8::MAX as f32 * yn * kn + 0.5) as u8,
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }
 
 
 impl From<Hsl> for Rgb {
     fn from(hsl: Hsl) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<Hsl>");
+        let _enter = span.enter();
+        
         let (h, s, l) = (hsl.hue(), hsl.saturation(), hsl.lightness());
+
+        event!(Level::TRACE, "Hsl {{ h={}, s={}, l={} }}", h, s, l);
 
         // Compute intermediate values.
         let ci: f32 = s * (1.0 - (2.0 * l - 1.0).abs());
         let xi: f32 = ci * (1.0 - (h / 60.0 % 2.0 - 1.0).abs());
         let mi: f32 = l - ci / 2.0;
 
+        event!(Level::TRACE, "ci={}, xi={}, mi={}", ci, xi, mi);
+
         // Scale and cast.
         let c = ((u8::MAX as f32) * ci) as u8;
         let x = ((u8::MAX as f32) * xi) as u8;
         let m = ((u8::MAX as f32) * mi) as u8;
 
+        event!(Level::TRACE, "c={}, x={}, m={}", c, x, m);
+
         // Use hue hextant to select RGB color.
-        match h {
+        let rgb = match h {
             h if   0.0 <= h && h <  60.0 => Rgb::new(c+m, x+m,   m),
             h if  60.0 <= h && h < 120.0 => Rgb::new(x+m, c+m,   m),
             h if 120.0 <= h && h < 180.0 => Rgb::new(  m, c+m, x+m),
@@ -623,17 +676,27 @@ impl From<Hsl> for Rgb {
             h if 240.0 <= h && h < 300.0 => Rgb::new(x+m,   m, c+m),
             h if 300.0 <= h && h < 360.0 => Rgb::new(c+m,   m, x+m),
             _ => unreachable!(),
-        }       
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb 
     }
 }
 
 impl From<Hsv> for Rgb {
     fn from(hsv: Hsv) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<Hsv>");
+        let _enter = span.enter();
+        
         let (h, s, v) = (hsv.hue(), hsv.saturation(), hsv.value());
+
+        event!(Level::TRACE, "Hsv {{ h={}, s={}, v={} }}", h, s, v);
 
         let c = v * s;
         let x = c * (1.0 - ((h / 60.0) % 2.0 - 1.0).abs());
         let m = v - c;
+
+        event!(Level::TRACE, "c={}, x={}, m={}", c, x, m);
 
         let (ri, gi, bi) = match h {
             h if   0.0 <= h && h <  60.0 => (  c,   x, 0.0),
@@ -645,26 +708,41 @@ impl From<Hsv> for Rgb {
             _ => unreachable!(),
         };
 
-        Rgb {
+        event!(Level::TRACE, "ri={}, gi={}, bi={}", ri, gi, bi);
+
+        let rgb = Rgb {
             r: ((ri + m) * (u8::MAX as f32)) as u8,
             g: ((gi + m) * (u8::MAX as f32)) as u8,
             b: ((bi + m) * (u8::MAX as f32)) as u8,
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }
 
 impl From<Xyz> for Rgb {
     fn from(xyz: Xyz) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<Xyz>");
+        let _enter = span.enter();
+        
         let (x, y, z) = (xyz.x(), xyz.y(), xyz.z()); 
+
+        event!(Level::TRACE, "Xyz {{ x={}, y={}, z={} }}", x, y, z);
 
         let ri = x *  3.2404542 + y * -1.5371385 + z * -0.4985314;
         let gi = x * -0.9692660 + y *  1.8760108 + z *  0.0415560;
         let bi = x *  0.0556434 + y * -0.2040259 + z *  1.0572252;
 
-        Rgb {
+        event!(Level::TRACE, "ri={}, gi={}, bi={}", ri, gi, bi);
+
+        let rgb = Rgb {
             r: (ri * u8::MAX as f32) as u8,
             g: (gi * u8::MAX as f32) as u8,
             b: (bi * u8::MAX as f32) as u8,
-        }
+        };
+
+        event!(Level::TRACE, "Rgb={:?}", rgb);
+        rgb
     }
 }

@@ -21,10 +21,11 @@ use crate::Xyz;
 
 // External library imports.
 #[cfg(feature = "serde")]
-use serde::{
-    Serialize,
-    Deserialize,
-};
+use serde::Deserialize;
+#[cfg(feature = "serde")]
+use serde::Serialize;
+use tracing::Level;
+use tracing::span;
 
 // Standard library imports.
 use std::fmt;
@@ -1846,30 +1847,45 @@ impl fmt::LowerHex for Color {
 
 impl From<Cmyk> for Color {
     fn from(cmyk: Cmyk) -> Color {
+        let span = span!(Level::DEBUG, "Color::from<Cmyk>");
+        let _enter = span.enter();
+        
         Color {rgb: Rgb::from(cmyk)}
     }
 }
 
 impl From<Hsl> for Color {
     fn from(hsl: Hsl) -> Color {
+        let span = span!(Level::DEBUG, "Color::from<Hsl>");
+        let _enter = span.enter();
+        
         Color {rgb: Rgb::from(hsl)}
     }
 }
 
 impl From<Rgb> for Color {
     fn from(rgb: Rgb) -> Color {
+        let span = span!(Level::DEBUG, "Color::from<Rgb>");
+        let _enter = span.enter();
+        
         Color {rgb: rgb}
     }
 }
 
 impl From<Hsv> for Color {
     fn from(hsv: Hsv) -> Color {
+        let span = span!(Level::DEBUG, "Color::from<Hsv>");
+        let _enter = span.enter();
+        
         Color {rgb: Rgb::from(hsv)}
     }
 }
 
 impl From<Xyz> for Color {
     fn from(xyz: Xyz) -> Color {
+        let span = span!(Level::DEBUG, "Color::from<Xyz>");
+        let _enter = span.enter();
+        
         Color {rgb: Rgb::from(xyz)}
     }
 }
@@ -1877,6 +1893,9 @@ impl From<Xyz> for Color {
 /// Converts the color to an RGB vector.
 impl From<Color> for [f32; 3] {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "[f32; 3]::from<Color>");
+        let _enter = span.enter();
+        
         Rgb::from(color).into()
     }
 }
@@ -1884,6 +1903,9 @@ impl From<Color> for [f32; 3] {
 /// Converts the color to an RGBA vector.
 impl From<Color> for [f32; 4] {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "[f32; 4]::from<Color>");
+        let _enter = span.enter();
+        
         Rgb::from(color).into()
     }
 }
@@ -1891,6 +1913,9 @@ impl From<Color> for [f32; 4] {
 /// Converts the color to an Rgb.
 impl From<Color> for Rgb {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "Rgb::from<Color>");
+        let _enter = span.enter();
+        
         color.rgb
     }
 }
@@ -1898,6 +1923,9 @@ impl From<Color> for Rgb {
 /// Converts the color to a Cmyk.
 impl From<Color> for Cmyk {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<Color>");
+        let _enter = span.enter();
+        
         color.rgb.into()
     }
 }
@@ -1905,12 +1933,18 @@ impl From<Color> for Cmyk {
 /// Converts the color to a Hsl.
 impl From<Color> for Hsl {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "Hsl::from<Color>");
+        let _enter = span.enter();
+        
         color.rgb.into()
     }
 }
 /// Converts the color to a Hsv.
 impl From<Color> for Hsv {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<Color>");
+        let _enter = span.enter();
+        
         color.rgb.into()
     }
 }
@@ -1918,6 +1952,9 @@ impl From<Color> for Hsv {
 /// Converts the color to a Xyz.
 impl From<Color> for Xyz {
     fn from(color: Color) -> Self {
+        let span = span!(Level::DEBUG, "Xyz::from<Color>");
+        let _enter = span.enter();
+        
         color.rgb.into()
     }
 }

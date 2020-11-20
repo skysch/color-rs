@@ -10,6 +10,7 @@
 //! Defines a 96-bit HSV color space.
 //!
 ////////////////////////////////////////////////////////////////////////////////
+
 // Local imports.
 use crate::Cmyk;
 use crate::Hsl;
@@ -22,10 +23,11 @@ use crate::Xyz;
 
 // External library imports.
 #[cfg(feature = "serde")]
-use serde::{
-    Serialize,
-    Deserialize,
-};
+use serde::Deserialize;
+#[cfg(feature = "serde")]
+use serde::Serialize;
+use tracing::Level;
+use tracing::span;
 
 // Standard library imports.
 use std::convert::From;
@@ -391,6 +393,9 @@ impl fmt::Display for Hsv {
 ////////////////////////////////////////////////////////////////////////////////
 impl From<[f32; 3]> for Hsv {
     fn from(components: [f32; 3]) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<[f32; 3]>");
+        let _enter = span.enter();
+        
         Hsv {
             h: components[0],
             s: components[1],
@@ -401,18 +406,27 @@ impl From<[f32; 3]> for Hsv {
 
 impl From<Cmyk> for Hsv {
     fn from(cmyk: Cmyk) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<Cmyk>");
+        let _enter = span.enter();
+        
         Hsv::from(Rgb::from(cmyk))
     }
 }
 
 impl From<Hsl> for Hsv {
     fn from(hsl: Hsl) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<Hsl>");
+        let _enter = span.enter();
+        
         Hsv::from(Rgb::from(hsl))
     }
 }
 
 impl From<Rgb> for Hsv {
     fn from(rgb: Rgb) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<Rgb>");
+        let _enter = span.enter();
+        
         // Find min, max, index of max, and delta.
         let ratios = rgb.ratios();
         let (min, max, max_index, _) = ratios
@@ -460,6 +474,9 @@ impl From<Rgb> for Hsv {
 
 impl From<Xyz> for Hsv {
     fn from(xyz: Xyz) -> Self {
+        let span = span!(Level::DEBUG, "Hsv::from<Xyz>");
+        let _enter = span.enter();
+        
         Hsv::from(Rgb::from(xyz))
     }
 }

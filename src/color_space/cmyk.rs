@@ -21,10 +21,11 @@ use crate::utility::nearly_equal;
 
 // External library imports.
 #[cfg(feature = "serde")]
-use serde::{
-    Serialize,
-    Deserialize,
-};
+use serde::Deserialize;
+#[cfg(feature = "serde")]
+use serde::Serialize;
+use tracing::Level;
+use tracing::span;
 
 // Standard library imports.
 use std::convert::From;
@@ -538,6 +539,9 @@ impl fmt::LowerHex for Cmyk {
 ////////////////////////////////////////////////////////////////////////////////
 impl From<u32> for Cmyk {
     fn from(hex: u32) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<u32>");
+        let _enter = span.enter();
+
         Cmyk {
             c: ((hex & 0xFF000000) >> 24) as u8,
             m: ((hex & 0x00FF0000) >> 16) as u8,
@@ -550,6 +554,9 @@ impl From<u32> for Cmyk {
 
 impl From<[u8; 4]> for Cmyk {
     fn from(octets: [u8; 4]) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<[u8; 4]>");
+        let _enter = span.enter();
+
         Cmyk {
             c: octets[0],
             m: octets[1],
@@ -562,6 +569,9 @@ impl From<[u8; 4]> for Cmyk {
 
 impl From<[f32; 4]> for Cmyk {
     fn from(ratios: [f32; 4]) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<[f32; 4]>");
+        let _enter = span.enter();
+
         Cmyk {
             c: (u8::MAX as f32 * clamped(ratios[0], 0.0, 1.0)) as u8,
             m: (u8::MAX as f32 * clamped(ratios[1], 0.0, 1.0)) as u8,
@@ -574,6 +584,9 @@ impl From<[f32; 4]> for Cmyk {
 
 impl From<Rgb> for Cmyk {
     fn from(rgb: Rgb) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<Rgb>");
+        let _enter = span.enter();
+
         // Find min, max, index of max, and delta.
         let ratios = rgb.ratios();
         let max = ratios
@@ -605,6 +618,9 @@ impl From<Rgb> for Cmyk {
 
 impl From<Hsl> for Cmyk {
     fn from(hsl: Hsl) -> Self {
+        let span = span!(Level::DEBUG, "Cmyk::from<Hsl>");
+        let _enter = span.enter();
+
         Cmyk::from(Rgb::from(hsl))
     }
 }
