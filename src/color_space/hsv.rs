@@ -70,7 +70,7 @@ impl Hsv {
     /// # }
     /// ```
     pub fn new(hue: f32, saturation: f32, value: f32) -> Self {
-        let mut hsv = Hsv {h: 0.0, s: 0.0, v: 0.0};
+        let mut hsv = Hsv { h: 0.0, s: 0.0, v: 0.0 };
         hsv.set_hue(hue);
         hsv.set_saturation(saturation);
         hsv.set_value(value);
@@ -396,11 +396,11 @@ impl From<[f32; 3]> for Hsv {
         let span = span!(Level::DEBUG, "Hsv::from<[f32; 3]>");
         let _enter = span.enter();
         
-        Hsv {
-            h: components[0],
-            s: components[1],
-            v: components[2],
-        }
+        Hsv::new(
+            components[0],
+            components[1],
+            components[2],
+        )
     }
 }
 
@@ -462,11 +462,7 @@ impl From<Rgb> for Hsv {
                 _ => unreachable!()
             };
 
-            // Correct wrapping.
-            h %= 360.0;
-            if h < 0.0 {h += 360.0};
-            
-            Hsv {h: h, s: s, v: max}
+            Hsv::new(h, s, max)
         }
 
     }

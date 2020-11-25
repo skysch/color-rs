@@ -395,11 +395,11 @@ impl From<[f32; 3]> for Hsl {
         let span = span!(Level::DEBUG, "Hsl::from<[f32; 3]>");
         let _enter = span.enter();
         
-        Hsl {
-            h: components[0],
-            s: components[1],
-            l: components[2],
-        }
+        Hsl::new(
+            components[0],
+            components[1],
+            components[2],
+        )
     }
 }
 
@@ -463,11 +463,7 @@ impl From<Rgb> for Hsl {
                 _ => unreachable!()
             };
 
-            // Correct wrapping.
-            if h > 360.0 {h -= 360.0};
-            if h < 0.0 {h += 360.0};
-
-            Hsl {h: h, s: s, l: l}
+            Hsl::new(h, s, l)
         }
 
     }
